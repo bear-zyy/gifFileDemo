@@ -15,6 +15,8 @@
 		7A12D950226080EC00D15182 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A12D94F226080EC00D15182 /* main.m */; };
 		7A12D95A226080EC00D15182 /* gifFileDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A12D959226080EC00D15182 /* gifFileDemoTests.m */; };
 		7A12D965226080EC00D15182 /* gifFileDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A12D964226080EC00D15182 /* gifFileDemoUITests.m */; };
+		7A12D974226082DD00D15182 /* CreateGifTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A12D973226082DD00D15182 /* CreateGifTool.m */; };
+		7A12D977226084AA00D15182 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A12D976226084AA00D15182 /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,9 @@
 		7A12D960226080EC00D15182 /* gifFileDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = gifFileDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A12D964226080EC00D15182 /* gifFileDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = gifFileDemoUITests.m; sourceTree = "<group>"; };
 		7A12D966226080EC00D15182 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7A12D972226082DD00D15182 /* CreateGifTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CreateGifTool.h; sourceTree = "<group>"; };
+		7A12D973226082DD00D15182 /* CreateGifTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CreateGifTool.m; sourceTree = "<group>"; };
+		7A12D976226084AA00D15182 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A12D977226084AA00D15182 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +91,7 @@
 				7A12D958226080EC00D15182 /* gifFileDemoTests */,
 				7A12D963226080EC00D15182 /* gifFileDemoUITests */,
 				7A12D93E226080EA00D15182 /* Products */,
+				7A12D975226084AA00D15182 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,6 +112,8 @@
 				7A12D941226080EA00D15182 /* AppDelegate.m */,
 				7A12D943226080EA00D15182 /* ViewController.h */,
 				7A12D944226080EA00D15182 /* ViewController.m */,
+				7A12D972226082DD00D15182 /* CreateGifTool.h */,
+				7A12D973226082DD00D15182 /* CreateGifTool.m */,
 				7A12D946226080EA00D15182 /* Main.storyboard */,
 				7A12D949226080EC00D15182 /* Assets.xcassets */,
 				7A12D94B226080EC00D15182 /* LaunchScreen.storyboard */,
@@ -130,6 +139,14 @@
 				7A12D966226080EC00D15182 /* Info.plist */,
 			);
 			path = gifFileDemoUITests;
+			sourceTree = "<group>";
+		};
+		7A12D975226084AA00D15182 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7A12D976226084AA00D15182 /* AVFoundation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,6 +281,7 @@
 			files = (
 				7A12D945226080EA00D15182 /* ViewController.m in Sources */,
 				7A12D950226080EC00D15182 /* main.m in Sources */,
+				7A12D974226082DD00D15182 /* CreateGifTool.m in Sources */,
 				7A12D942226080EA00D15182 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
