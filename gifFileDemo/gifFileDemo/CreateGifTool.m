@@ -57,6 +57,9 @@
     //开始位置startTime
     
     CMTime startTime = CMTimeMakeWithSeconds(videoRange.location, videoAsset.duration.timescale);
+    
+    NSLog(@" videoRange.location == %lu   videoAsset.duration.timescale == %d "  , (unsigned long)videoRange.location , videoAsset.duration.timescale);
+    
     //截取长度videoDuration
     CMTime videoDuration = CMTimeMakeWithSeconds(videoRange.length, videoAsset.duration.timescale);
     
@@ -73,11 +76,13 @@
     
     //视频声音采集(也可不执行这段代码不采集视频音轨，合并后的视频文件将没有视频原来的声音
     AVMutableCompositionTrack * compositionVioceTrack = [mixComposition addMutableTrackWithMediaType:AVMediaTypeAudio preferredTrackID:kCMPersistentTrackID_Invalid];
-    
+
     [compositionVioceTrack insertTimeRange:videoTimeRange ofTrack:[videoAsset tracksWithMediaType:AVMediaTypeAudio].firstObject atTime:kCMTimeZero error:nil];
     
+    
+    /// 这里可以理解为把另一个音频合并到视频来 视频编辑就可以这样使用
     //声音长度截取范围==视频长度
-    CMTimeRange audioTimeRange = CMTimeRangeMake(kCMTimeZero, videoDuration);
+    CMTimeRange audioTimeRange = CMTimeRangeMake(kCMTimeZero, videoDuration);////这里和视频的截取位置不一样吧
     
     //音频采集compositionCommentaryTrack
     AVMutableCompositionTrack * compositionAudioTrack = [mixComposition addMutableTrackWithMediaType:AVMediaTypeAudio preferredTrackID:kCMPersistentTrackID_Invalid];

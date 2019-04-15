@@ -34,20 +34,20 @@
 //
     NSLog(@"fileUrl  =  %@" , fileUrl);
     //这里还差地址，存储的地址
-    [[CreateGifTool shareTool] interceptVideoAndVideoUrl:[NSURL URLWithString:@"http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400"] withOutPath:fileUrl outputFileType:AVFileTypeMPEG4 range:NSMakeRange(4, 4) intercept:^(NSError * _Nonnull error, NSURL * _Nonnull outPutURL) {
+    [[CreateGifTool shareTool] interceptVideoAndVideoUrl:[NSURL URLWithString:@"http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400"] withOutPath:fileUrl outputFileType:AVFileTypeMPEG4 range:NSMakeRange(19, 10) intercept:^(NSError * _Nonnull error, NSURL * _Nonnull outPutURL) {
         if (error) {
             NSLog(@"%@" , error);
         }
         else{
             NSLog(@"outPutURL = %@" , outPutURL);
             
-            [[CreateGifTool shareTool] createGIFfromURL:outPutURL loopCount:1 delayTime:0.1 gifImagePath:[path stringByAppendingString:[NSString stringWithFormat:@"/%@.gif" ,@"gif"]] complete:^(NSError * _Nonnull error, NSURL * _Nonnull gifURL) {
+            [[CreateGifTool shareTool] createGIFfromURL:outPutURL loopCount:1 delayTime:0.25 gifImagePath:[path stringByAppendingString:[NSString stringWithFormat:@"/%@.gif" ,@"gif"]] complete:^(NSError * _Nonnull error, NSURL * _Nonnull gifURL) {
                 NSLog(@"gifURL == %@" , gifURL);
-                
+
                 self.gifUrl = gifURL;
-                
+
                 NSURLRequest * request = [NSURLRequest requestWithURL:gifURL];
-                
+
                 [self.webView loadRequest:request];
             }];
             
