@@ -183,12 +183,12 @@
     }
     
     // Get the length of the video in seconds
-    float videoLength = (float)asset.duration.value/asset.duration.timescale;
-    int framesPerSecond = 4;
-    int frameCount = videoLength * framesPerSecond;
+    float videoLength = (float)asset.duration.value/asset.duration.timescale;/////value是总得长度，  timescale是每一秒的帧数， videolength是时长
+    int framesPerSecond = 4;////这里是手动设置了每秒的帧数
+    int frameCount = videoLength * framesPerSecond;////这里就是总得帧数
     
     // How far along the video track we want to move, in seconds.
-    float increment = (float)videoLength/frameCount;
+    float increment = (float)videoLength/frameCount;/////这个是每一帧的时长
     
     
     // Add frames to the buffer
