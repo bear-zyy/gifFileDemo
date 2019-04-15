@@ -29,6 +29,14 @@
     return tool;
 }
 
+#pragma mark -截取视频
+/**
+ @param videoUrl 视频的URL
+ @param outPath 输出路径
+ @param outputFileType 输出视频格式
+ @param videoRange 截取视频的范围
+ @param interceptBlock 视频截取的回调
+ */
 -(void)interceptVideoAndVideoUrl:(NSURL *)videoUrl withOutPath:(NSString *)outPath outputFileType:(NSString *)outputFileType range:(NSRange)videoRange intercept:(InterceptBlock)interceptBlock{
     
     _interceptBlock = interceptBlock;
@@ -131,6 +139,15 @@
     }];
 
 }
+
+#pragma mark--制作GIF
+/**
+ @param videoUrl 视频的路径URL
+ @param loopCount 播放次数 0即无限循环
+ @param time 每帧的时间间隔 默认0.25s
+ @param imagePath 存放GIF图片的文件路径
+ @param completeBlock 完成的回调
+ */
 
 -(void)createGIFfromURL:(NSURL *)videoUrl loopCount:(int)loopCount delayTime:(CGFloat)time gifImagePath:(NSString *)imagePath complete:(CompleteBlock)completeBlock{
     
